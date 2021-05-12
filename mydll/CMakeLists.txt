@@ -1,0 +1,3 @@
+add_subdirectory(tests)
+add_subdirectory(mysin_dll)
+add_subdirectory(mysort_dll)

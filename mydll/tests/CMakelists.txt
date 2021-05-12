@@ -1,0 +1,17 @@
+# задаем набор исходников
+set(SOURCES_EXE
+    tests.cpp
+)
+
+# создаем исполняемый файл
+add_executable(${PROJECT_NAME}_tests ${SOURCES_EXE})
+
+# подключаем библиотеки:
+# 1. Тестируемая библиотека
+# 2. gest
+target_link_libraries(${PROJECT_NAME}_tests PUBLIC mysin_dyn)
+target_link_libraries(${PROJECT_NAME}_tests PUBLIC mysort_dyn)
+target_link_libraries(${PROJECT_NAME}_tests PUBLIC gtest_main)
+
+# В solution эта библиотека лежит в tests_location
+set_property(TARGET ${PROJECT_NAME}_tests PROPERTY FOLDER "tests_location")
